@@ -1,0 +1,18 @@
+services:
+  server:
+    build: 
+      context: .
+    ports: 
+        - 8000:8000
+    container_name: stdperfregression
+    hostname: stdperfregression
+    volumes : 
+      - ${PWD}:/app
+    restart : unless-stopped
+    networks : 
+      - stdperfregression
+
+networks:
+  stdperfregression:
+    driver: bridge
+
